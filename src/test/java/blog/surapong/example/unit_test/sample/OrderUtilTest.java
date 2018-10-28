@@ -92,8 +92,8 @@ public class OrderUtilTest {
 		////////////
 		
 		int[] arrayInput = {3, 1, 2};
-		int order = 1;
-		int expected = 1;
+		int order = 3;
+		int expected = 0;
 
 		////////////
 		// ACT
