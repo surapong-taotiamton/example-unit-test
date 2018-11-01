@@ -1,8 +1,5 @@
 package blog.surapong.example.unit_test.realwork.rawdesign;
 
-import static org.junit.jupiter.api.Assertions.assertThrows;
-
-import java.io.IOException;
 
 import org.junit.jupiter.api.Test;
 
@@ -46,13 +43,13 @@ public class FtpDownloadTaskTest {
 		// ACT
 		///////////
 
+		ftpDownloadTask.run();
+		
 		////////////
 		// ASSERT
 		////////////
 		
-		assertThrows(IOException.class, () -> {
-			ftpDownloadTask.run();
-		});
+		// How to assert ?
 
 	}
 	
@@ -70,13 +67,13 @@ public class FtpDownloadTaskTest {
 		// ACT
 		///////////
 
+		ftpDownloadTask.run();
+		
 		////////////
 		// ASSERT
 		////////////
 		
-		assertThrows(IOException.class, () -> {
-			ftpDownloadTask.run();
-		});
+		// How to assert ?
 
 	}
 	
