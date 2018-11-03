@@ -30,7 +30,7 @@ public class FtpDownloadTaskTest {
 	}
 	
 	@Test
-	public void run_FtpConnectionError_ThrowIOException() throws Exception {
+	public void run_FtpConnectionError_NoIdeaToVerify() throws Exception {
 		
 		
 		/////////////
@@ -54,7 +54,7 @@ public class FtpDownloadTaskTest {
 	}
 	
 	@Test
-	public void run_FtpListFileError_ThrowIOException() throws Exception {
+	public void run_FtpListFileError_NoIdeaToVerify() throws Exception {
 		
 		
 		/////////////
