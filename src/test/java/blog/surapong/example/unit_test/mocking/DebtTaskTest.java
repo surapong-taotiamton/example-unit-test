@@ -28,13 +28,13 @@ public class DebtTaskTest {
 		/////////////
 		// ARRANGE
 		////////////
-		final int DEPT_VALUE = 100;
+		final int DEBT_VALUE = 100;
 		final String COMPANY_NAME = "A";
-		final String EXPECTED_MESSAGE = String.format("Company %s, please pay the dept", COMPANY_NAME);
+		final String EXPECTED_MESSAGE = String.format("Company %s, please pay the debt", COMPANY_NAME);
 						
-		when(debtManagement.findCompanyToAlertDept(eq(DEPT_VALUE)) ).thenReturn(Arrays.asList(COMPANY_NAME));
+		when(debtManagement.findCompanyToAlertDebt(eq(DEBT_VALUE)) ).thenReturn(Arrays.asList(COMPANY_NAME));
 		
-		DebtTask debtTask = new DebtTask(debtManagement, DEPT_VALUE, alertChanel);
+		DebtTask debtTask = new DebtTask(debtManagement, DEBT_VALUE, alertChanel);
 		
 		////////////
 		// ACT
@@ -47,7 +47,7 @@ public class DebtTaskTest {
 		// ASSERT
 		////////////
 		
-		verify(debtManagement, times(1)).findCompanyToAlertDept(DEPT_VALUE);
+		verify(debtManagement, times(1)).findCompanyToAlertDebt(DEBT_VALUE);
 		verify(alertChanel, times(1)).alert(EXPECTED_MESSAGE);
 		
 	}
@@ -60,11 +60,11 @@ public class DebtTaskTest {
 		// ARRANGE
 		////////////
 		
-		final int DEPT_VALUE = 100;
+		final int DEBT_VALUE = 100;
 		
-		when(debtManagement.findCompanyToAlertDept( eq(DEPT_VALUE) )).thenReturn(Arrays.asList("A", "B", "C", "D", "E"));
+		when(debtManagement.findCompanyToAlertDebt( eq(DEBT_VALUE) )).thenReturn(Arrays.asList("A", "B", "C", "D", "E"));
 		
-		DebtTask debtTask = new DebtTask(debtManagement, DEPT_VALUE, alertChanel);
+		DebtTask debtTask = new DebtTask(debtManagement, DEBT_VALUE, alertChanel);
 
 		////////////
 		// ACT
@@ -76,7 +76,7 @@ public class DebtTaskTest {
 		// ASSERT
 		////////////
 		
-		verify(debtManagement, times(1)).findCompanyToAlertDept(DEPT_VALUE);
+		verify(debtManagement, times(1)).findCompanyToAlertDebt(DEBT_VALUE);
 		verify(alertChanel, times(5)).alert(anyString());
 
 	}

@@ -14,7 +14,7 @@ import org.junit.jupiter.api.Test;
 public class DebtManagementTest {
 	
 	@Test
-	public void findCompanyToAlertDept_NormalCase_ReturnCorrect() throws Exception {
+	public void findCompanyToAlertDebt_NormalCase_ReturnCorrect() throws Exception {
 		
 		/////////////
 		// ARRANGE
@@ -37,7 +37,7 @@ public class DebtManagementTest {
 		// ACT
 		///////////
 		
-		List<String> actual = debtManagement.findCompanyToAlertDept(1000);
+		List<String> actual = debtManagement.findCompanyToAlertDebt(1000);
 
 		////////////
 		// ASSERT
@@ -50,7 +50,7 @@ public class DebtManagementTest {
 	}
 	
 	@Test
-	public void findCompanyToAlertDept_MultipleDeptInCompany_ReturnCorrect() throws Exception {
+	public void findCompanyToAlertDebt_MultipleDeptInCompany_ReturnCorrect() throws Exception {
 		
 		/////////////
 		// ARRANGE
@@ -76,7 +76,7 @@ public class DebtManagementTest {
 		// ACT
 		///////////
 		
-		List<String> actual = debtManagement.findCompanyToAlertDept(1000);
+		List<String> actual = debtManagement.findCompanyToAlertDebt(1000);
 
 		////////////
 		// ASSERT
@@ -88,7 +88,7 @@ public class DebtManagementTest {
 	}
 	
 	@Test
-	public void findCompanyToAlertDept_ErrorFromDao_ThrowIOException() throws Exception {
+	public void findCompanyToAlertDebt_ErrorFromDao_ThrowIOException() throws Exception {
 		
 		/////////////
 		// ARRANGE
@@ -107,7 +107,7 @@ public class DebtManagementTest {
 		////////////
 		
 		assertThrows(IOException.class, () -> {
-			debtManagement.findCompanyToAlertDept(1000);
+			debtManagement.findCompanyToAlertDebt(1000);
 		});
 
 	}

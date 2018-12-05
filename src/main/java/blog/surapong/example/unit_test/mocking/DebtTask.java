@@ -7,12 +7,12 @@ public class DebtTask implements Runnable {
 
 	
 	private DebtManagement debtManagement;
-	private int deptValue;
+	private int debtValue;
 	private AlertChanel alertChanel;
 	
-	public DebtTask(DebtManagement debtManagement, int deptValue,AlertChanel alertChanel) {
+	public DebtTask(DebtManagement debtManagement, int debtValue,AlertChanel alertChanel) {
 		super();
-		this.deptValue = deptValue;
+		this.debtValue = debtValue;
 		this.debtManagement = debtManagement;
 		this.alertChanel = alertChanel;
 	}
@@ -22,7 +22,7 @@ public class DebtTask implements Runnable {
 	public void run() {
 		
 		try {
-			List<String> companies = debtManagement.findCompanyToAlertDept(deptValue);
+			List<String> companies = debtManagement.findCompanyToAlertDebt(debtValue);
 			
 			for(String company : companies) {
 				String alertMessage = String.format("Company %s, please pay the dept", company);

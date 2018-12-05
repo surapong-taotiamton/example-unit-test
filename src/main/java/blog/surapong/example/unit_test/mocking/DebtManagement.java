@@ -15,25 +15,25 @@ public class DebtManagement {
 		this.customerDebtDao = customerDebtDao;
 	}
 
-	public List<String> findCompanyToAlertDept(Integer dept) throws IOException {
+	public List<String> findCompanyToAlertDebt(Integer debt) throws IOException {
 		
 		
-		HashMap<String, Integer> companyDeptHash = new HashMap<>();
+		HashMap<String, Integer> companyDebtHash = new HashMap<>();
 		List<CustomerDebt> customerDebts = this.customerDebtDao.findAll();
 		
 		for (CustomerDebt customerDebt : customerDebts) {
-			 Integer currentDept = companyDeptHash.get(customerDebt.getCompanyName());
+			 Integer currentDebt = companyDebtHash.get(customerDebt.getCompanyName());
 			 
-			 if (currentDept == null) {
-				 companyDeptHash.put(customerDebt.getCompanyName(), customerDebt.getDebt());
+			 if (currentDebt == null) {
+				 companyDebtHash.put(customerDebt.getCompanyName(), customerDebt.getDebt());
 			 } else {
-				 companyDeptHash.put(customerDebt.getCompanyName(), currentDept + customerDebt.getDebt());
+				 companyDebtHash.put(customerDebt.getCompanyName(), currentDebt + customerDebt.getDebt());
 			 }
 		}
 		
-		List<String> listAnswer = companyDeptHash.entrySet().stream()
+		List<String> listAnswer = companyDebtHash.entrySet().stream()
 		.filter( obj -> {
-			return obj.getValue() >= dept;
+			return obj.getValue() >= debt;
 		}).map( obj -> obj.getKey() )
 		.collect(Collectors.toList());
 		
