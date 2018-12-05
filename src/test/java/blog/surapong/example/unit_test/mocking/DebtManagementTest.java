@@ -50,7 +50,7 @@ public class DebtManagementTest {
 	}
 	
 	@Test
-	public void findCompanyToAlertDebt_MultipleDeptInCompany_ReturnCorrect() throws Exception {
+	public void findCompanyToAlertDebt_MultipleDebtInCompany_ReturnCorrect() throws Exception {
 		
 		/////////////
 		// ARRANGE

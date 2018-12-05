@@ -25,7 +25,7 @@ public class DebtTask implements Runnable {
 			List<String> companies = debtManagement.findCompanyToAlertDebt(debtValue);
 			
 			for(String company : companies) {
-				String alertMessage = String.format("Company %s, please pay the dept", company);
+				String alertMessage = String.format("Company %s, please pay the debt", company);
 				alertChanel.alert(alertMessage);
 			}
 			
