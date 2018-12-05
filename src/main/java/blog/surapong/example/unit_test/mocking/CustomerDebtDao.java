@@ -7,6 +7,7 @@ public interface CustomerDebtDao {
 	
 	public List<CustomerDebt> findAll() throws IOException;
 	public CustomerDebt findByRef(String ref) throws IOException;
+	public void delete(CustomerDebt customerDebt) throws IOException;
 	
 
 }
